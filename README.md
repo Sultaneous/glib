@@ -57,16 +57,16 @@ The timer module provides the Timer class, a simple to use high performance time
 
 Timer my_timer=Timer()
 my_timer.start()
-# ... do logic here...
+// ... do logic here...
 my_timer.stop()
 
-# Report seconds used:
+// Report seconds used:
 std::cout << "Time taken: " << my_timer.elapsed() << std::endl;
 
-# Report microseconds; could also use unit=micros
+// Report microseconds; could also use unit=micros/
 std::cout << "Time taken: " << my_timer.elapsed("µs") << std::endl;
 
-# Report hours; could also use unit=h
+// Report hours; could also use unit=h
 std::cout << "Time taken: " << my_timer.elapsed("hours") << std::endl;
 ```
 
@@ -190,3 +190,4 @@ One does not need to turn off the colour before applying a new colour; the previ
 | retro | Foreground white, background black |
 | paper | Foreground black, background white |
 
+![Colour List]https://github.com/Sultaneous/gamziatools/blob/main/docs/colour_list.png
