@@ -252,14 +252,14 @@ enforced at the database level as part of the schema.  User name cannot be NULL.
 | Method | Parameters | Returns | Summary |
 |:-----|:--------|:-------|:-------|
 | AccountManager() | **_(Optional)_** Database file name.  If not provided, uses default, "**accounts.db**" | Class instance | Constructor.  Takes optional db file name.  If the db does not exist, it creates the schema, otherwise it opens it for read/write access. |
-| doesUserExist() | string user name | True if user exists in database, False otherwise | Checks if a user already exists in database. |
-| addUser() | string user name; string password | True on success, False otherwise | Adds a new user record with salted, hashed password to database. |
+| doesUserExist() | string user name | **True** if user exists in database, **False** otherwise | Checks if a user already exists in database. |
+| addUser() | string user name; string password | **True** on success, **False** otherwise | Adds a new user record with salted, hashed password to database. |
 | listUsers() | **None** | Returns a list of strings, where each line is the equivalent of 1 record from the accounts table. | The fields in a record are ID (integer), Username (String), Password (String) and CreationDate (String, date/time format).  If the table is empty, an empty list is returned. |
 | getUser() | string user name | Returns a string containing the complete user record, or **NULL** if no record found. | Always check for **NULL** in case user wasn't in the db. This can be avoided with a call to doesUserExist() before calling getUser(). |
 | getPassword() | string user name | Returns the password entry for the specified user, or **NULL** if user not found. |  Password value is the salted, SHA256 hash value of the original password. Plain-text passwords are not stored.  Passwords are salted with the User name (the salt value is not secret). |
 | updatePassword() | string user name, string newpassword | **True** on success, **False** otherwise. | **NOTE** The class will salt and hash the password, so you need only provide the plain-text version of the password to this method. |
 | deleteUser() | string user name | **True** if successful, **False** otherwise | Deletes user from database.  **NOTE** If user doesn't exist, it returns False as nothing was deleted. Again, the programmer can avoid ambiguity on the meaning of a False return value (ie, user didn't exist, or DB error occurred) by first calling doesUserExist(). |
-| verifyPassword() | string user name, string value to test | Returns True if user's salted hash password value matches the value provided, False if not. | **NOTE** This requires that the value you test is the salted pasword hash and not the plain text password.  See saltPassword() below for how to do this, and see the usage examples above for a code example. |
+| verifyPassword() | string user name, string value to test | Returns **True** if user's salted hash password value matches the value provided, **False** if not. | **NOTE** This requires that the value you test is the salted pasword hash and not the plain text password.  See saltPassword() below for how to do this, and see the usage examples above for a code example. |
 | **Static** AccountManager.saltPassword() | string user name, string plain-text password | Returns a string containing the salted, SHA256 password hash | **NOTE** This is a static method that can be used anytime without a class instance.  The user name is required, as it is the salt value that is used (the salt value is not secret).|
 
 ---
