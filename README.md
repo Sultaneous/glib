@@ -27,7 +27,6 @@ need to include the ".cpp" file as well as the header.
 
 ```c++
 #include "timer.h"
-#include "timer.cpp"
 ```
 
 From this point on, you may use the Timer API in your code.
@@ -55,7 +54,6 @@ The timer module provides the Timer class, a simple to use high performance time
 #### Usage examples:
 ``` c++
 #include "Timer.h"
-#include "Timer.cpp"
 
 Timer my_timer=Timer()
 my_timer.start();
