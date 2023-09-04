@@ -101,7 +101,6 @@ can be turned off (reverting to terminal default) with "**coff**" (Colour OFF), 
 #### Usage examples:
 ``` c++
 #include "Colour.h"
-#include "Colour.cpp"
 
 Colour C = Colour()
 std::cout << C.clc << "This is in light cyan." << C.off << "This is back to normal." << std::endl;
@@ -213,7 +212,6 @@ The **sqlite3 library (sqlite3.dll)** must be available to your program first to
 #### Usage examples:
 ``` c++
 #include "AccountManager.h"
-#inlcude "AccountManager.cpp"
 
 // Create a schema / or open existing one
 mgr = AccountManager("users.db");
