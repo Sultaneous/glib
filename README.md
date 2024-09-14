@@ -260,3 +260,6 @@ enforced at the database level as part of the schema.  User name cannot be NULL.
 
 ---
 
+### <a id="info_sqlite">SQL</a>
+
+**Coming Soon - detailed instructions on how to use the sqlite wrapper in c++!**
