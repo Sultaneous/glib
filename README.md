@@ -20,7 +20,7 @@ version 0x20.
 
 ## Import
 
-This is not an all-in-one type library.  To use a module in your Python program, simply import the module's ".h" file, and ".cpp" file.  You will 
+This is not an all-in-one type library.  To use a module in your C/C++ program, simply import the module's ".h" file, and ".cpp" file.  You will 
 need to include the ".cpp" file as well as the header.
 
 (Example to use the timer module; see below for details)
